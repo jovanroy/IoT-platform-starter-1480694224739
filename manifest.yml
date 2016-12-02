@@ -1,0 +1,16 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: IoT-platform-starter
+  host: IoT-platform-starter
+  disk_quota: 1024M
+  services:
+  - IoT-platform-starter-cloudantNoSQLDB
+  - IoT-platform-starter-iotf-service
+  - availability-monitoring-auto
+  env:
+    NODE_RED_PASSWORD: passw0rd_jvr
+    NODE_RED_USERNAME: jvr
+  command: node --max-old-space-size=384 node_modules/node-red/red.js --settings ./bluemix-settings.js -v
